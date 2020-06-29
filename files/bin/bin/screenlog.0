@@ -1,0 +1,103 @@
+[2020-06-28T14:02:37] NOTE: started server (IPv4), waiting for clients
+[2020-06-28T14:02:37] NOTE: accepted client connection
+[2020-06-28T14:02:37] NOTE: client "dave-gaming" has connected
+[2020-06-28T14:02:38] INFO: switch from "dave-kubuntu" to "dave-gaming" at 0,0
+[2020-06-28T14:02:38] INFO: leaving screen
+[2020-06-28T14:02:39] INFO: screen "dave-kubuntu" updated clipboard 0
+[2020-06-28T14:02:39] INFO: screen "dave-kubuntu" updated clipboard 1
+[2020-06-28T14:02:39] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:02:39] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:02:42] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2266,400
+[2020-06-28T14:02:42] INFO: entering screen
+[2020-06-28T14:02:42] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:02:42] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:02:45] INFO: switch from "dave-kubuntu" to "dave-gaming" at 874,434
+[2020-06-28T14:02:45] INFO: leaving screen
+[2020-06-28T14:02:45] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:02:45] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:03:22] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2713,567
+[2020-06-28T14:03:22] INFO: entering screen
+[2020-06-28T14:03:22] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:03:22] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:03:39] INFO: switch from "dave-kubuntu" to "dave-gaming" at 822,595
+[2020-06-28T14:03:39] INFO: leaving screen
+[2020-06-28T14:03:39] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:03:39] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:03:42] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2539,804
+[2020-06-28T14:03:42] INFO: entering screen
+[2020-06-28T14:03:42] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:03:42] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:04:13] INFO: switch from "dave-kubuntu" to "dave-gaming" at 909,595
+[2020-06-28T14:04:13] INFO: leaving screen
+[2020-06-28T14:04:13] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:04:13] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:04:28] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2585,591
+[2020-06-28T14:04:28] INFO: entering screen
+[2020-06-28T14:04:28] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:04:28] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:05:00] INFO: switch from "dave-kubuntu" to "dave-gaming" at 1034,459
+[2020-06-28T14:05:00] INFO: leaving screen
+[2020-06-28T14:05:00] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:05:00] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:05:04] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2387,296
+[2020-06-28T14:05:04] INFO: entering screen
+[2020-06-28T14:05:04] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:05:04] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:05:10] INFO: switch from "dave-kubuntu" to "dave-gaming" at 779,622
+[2020-06-28T14:05:10] INFO: leaving screen
+[2020-06-28T14:05:10] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:05:10] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:05:12] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2415,386
+[2020-06-28T14:05:12] INFO: entering screen
+[2020-06-28T14:05:12] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:05:12] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:05:56] INFO: switch from "dave-kubuntu" to "dave-gaming" at 852,597
+[2020-06-28T14:05:56] INFO: leaving screen
+[2020-06-28T14:05:56] INFO: screen "dave-kubuntu" updated clipboard 0
+[2020-06-28T14:05:56] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:05:56] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:06:09] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2512,563
+[2020-06-28T14:06:09] INFO: entering screen
+[2020-06-28T14:06:09] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:06:09] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:06:17] INFO: switch from "dave-kubuntu" to "dave-gaming" at 1116,462
+[2020-06-28T14:06:17] INFO: leaving screen
+[2020-06-28T14:06:17] INFO: screen "dave-kubuntu" updated clipboard 1
+[2020-06-28T14:06:17] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:06:17] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:26:03] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2510,566
+[2020-06-28T14:26:03] INFO: entering screen
+[2020-06-28T14:26:03] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:26:03] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:26:07] INFO: switch from "dave-kubuntu" to "dave-gaming" at 820,449
+[2020-06-28T14:26:07] INFO: leaving screen
+[2020-06-28T14:26:07] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:26:07] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:30:43] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2510,566
+[2020-06-28T14:30:43] INFO: entering screen
+[2020-06-28T14:30:43] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:30:43] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:31:00] INFO: switch from "dave-kubuntu" to "dave-gaming" at 820,449
+[2020-06-28T14:31:00] INFO: leaving screen
+[2020-06-28T14:31:00] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:31:00] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:31:11] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2654,726
+[2020-06-28T14:31:11] INFO: entering screen
+[2020-06-28T14:31:11] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:31:11] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:31:13] INFO: switch from "dave-kubuntu" to "dave-gaming" at 820,449
+[2020-06-28T14:31:13] INFO: leaving screen
+[2020-06-28T14:31:14] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:31:14] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:43:23] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2595,615
+[2020-06-28T14:43:23] INFO: entering screen
+[2020-06-28T14:43:23] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T14:43:23] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T14:43:26] INFO: switch from "dave-kubuntu" to "dave-gaming" at 24,460
+[2020-06-28T14:43:26] INFO: leaving screen
+[2020-06-28T14:43:26] INFO: Running shell script for screen "dave-gaming"
+[2020-06-28T14:43:26] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"
+[2020-06-28T16:07:11] INFO: switch from "dave-gaming" to "dave-kubuntu" at 2595,615
+[2020-06-28T16:07:11] INFO: entering screen
+[2020-06-28T16:07:11] INFO: Running shell script for screen "dave-kubuntu"
+[2020-06-28T16:07:11] ERROR: Script not accessible "/home/dave10/scripts/barrier/onchange.sh"

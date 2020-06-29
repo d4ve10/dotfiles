@@ -1,0 +1,2 @@
+ #!/bin/bash
+ vban_emitter -i 192.168.0.55 -p 6980 -s dave-gaming -r 48000 -b alsa
