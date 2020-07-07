@@ -26,4 +26,4 @@ export BROWSER="brave"
 export EDITOR='vim'
 
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$PATH:$HOME/bin
+export PATH="$PATH:$HOME/bin"
