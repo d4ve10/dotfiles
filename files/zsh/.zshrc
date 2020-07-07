@@ -18,12 +18,12 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 
-export LANG=en_US.UTF-8
+export USER_LANGUAGE="en_US.UTF-8"
 export LC_ALL=${USER_LANGUAGE}
 export LANG=${USER_LANGUAGE}
 export LANGUAGE=${USER_LANGUAGE}
 export BROWSER="brave"
-export EDITOR='vim'
+export EDITOR="vim"
 
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/bin"
