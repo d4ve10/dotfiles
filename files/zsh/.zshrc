@@ -24,6 +24,3 @@ export LANG=${USER_LANGUAGE}
 export LANGUAGE=${USER_LANGUAGE}
 export BROWSER="brave"
 export EDITOR="vim"
-
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$PATH:$HOME/bin"

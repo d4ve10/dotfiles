@@ -1,0 +1,2 @@
+#!/bin/bash
+barrierc -n dave-main -d INFO -l /tmp/barrier_client.log -f 192.168.0.55
