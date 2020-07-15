@@ -21,11 +21,10 @@ elif [[ "$SHELL" != "$zsh_path" ]]; then
     echo "default shell changed to $zsh_path"
 fi
 
-echo "Installing oh-my-zsh..."
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/powerlevel10k
+echo 'source ~/.config/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
-git clone https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.config/oh-my-zsh"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.config/oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.config/oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+echo "Please install these dependencies: zsh-syntax-highlighting autojump zsh-autosuggestions"
 
 
 echo "Done. Reload your terminal."
