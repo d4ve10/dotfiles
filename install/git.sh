@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-printf "Setting up Git...\\n\\n"
-
 defaultName=$( git config --global user.name )
 defaultEmail=$( git config --global user.email )
 defaultGithub=$( git config --global github.user )
+
+if [[ "$defaultGithub" != "" ]]; then
+	return
+fi
+
+printf "Setting up Git...\\n\\n"
 
 read -rp "Name [$defaultName] " name
 read -rp "Email [$defaultEmail] " email
