@@ -23,8 +23,9 @@ fi
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/powerlevel10k
 echo 'source ~/.config/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
 
-echo "Please install these dependencies: zsh-syntax-highlighting autojump zsh-autosuggestions"
-
+echo "Download the autojump package (Optional)"
 
 echo "Done. Reload your terminal."
