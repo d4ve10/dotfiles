@@ -4,21 +4,10 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# Dependancies You Need for this Config
-# zsh-syntax-highlighting - syntax highlighting for ZSH in standard repos
-# autojump - jump to directories with j or jc for child or jo to open in file manager
-# zsh-autosuggestions - Suggestions based on your history
-
-# Initial Setup
-# touch "$HOME/.cache/zshhistory
-# Setup Alias in $HOME/zsh/aliasrc
-# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-# echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
-
-# Enable colors and change prompt:
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+export ZSH="$HOME/.config/oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
 
 # Custom Variables
 export USER_LANGUAGE="en_US.UTF-8"
@@ -28,24 +17,8 @@ export LANGUAGE=${USER_LANGUAGE}
 export BROWSER="brave"
 export EDITOR="vim"
 
-# Basic auto/tab complete:
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)               # Include hidden files.
-
-# Custom ZSH Binds
-bindkey '^ ' autosuggest-accept
-
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
-
-# Load ; should be last.
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source /usr/share/autojump/autojump.zsh 2>/dev/null
-source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
