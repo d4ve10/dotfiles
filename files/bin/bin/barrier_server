@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /tmp
-screen -dmSL barriers barriers -c /home/dave10/.config/barrier/barrier.conf -n dave-main --screen-change-script /home/dave10/bin/barrier/onchange.sh -f -l /tmp/barrier_server.log
+screen -dmSL barriers barriers -c /home/dave10/.config/barrier/barrier.conf -n dave-main --screen-change-script /home/dave10/bin/onchange -f -l /tmp/barrier_server.log
