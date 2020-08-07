@@ -1,2 +1,2 @@
 #!/bin/bash
-sleep 4s && /opt/rambox/rambox &
+sleep 6s && /opt/rambox/rambox &
