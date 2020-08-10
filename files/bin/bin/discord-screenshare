@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo -b /usr/bin/Mon2Cam -m 0
+sudo -b /usr/bin/mon2cam -m 0
