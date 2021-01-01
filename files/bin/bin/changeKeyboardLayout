@@ -1,0 +1,4 @@
+#!/bin/bash
+setxkbmap -layout de -variant qwerty
+sleep 2
+setxkbmap -layout us

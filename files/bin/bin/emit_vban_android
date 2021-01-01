@@ -1,2 +1,2 @@
  #!/bin/bash
- vban_emitter -i 192.168.0.52 -p 6980 -s Stream1 -r 44100 -b alsa
+ vban_emitter -i 192.168.0.52 -p 6980 -s Stream1 -r 44100 -b alsa -n 2 -l 3
