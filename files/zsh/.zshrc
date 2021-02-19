@@ -20,6 +20,7 @@ export LANG=${USER_LANGUAGE}
 export LANGUAGE=${USER_LANGUAGE}
 export BROWSER="brave"
 export EDITOR="vim"
+export GPG_TTY="$(tty)"
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
