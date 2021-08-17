@@ -9,6 +9,14 @@ if ! command_exists stow; then
     echo "stow not found. Please install and then re-run installation script"
     exit 1
 fi
+if ! command_exists git; then
+    echo "git not found. Please install and then re-run installation script"
+    exit 1
+fi
+if ! command_exists zsh; then
+    echo "zsh not found. Please install and then re-run installation script"
+    exit 1
+fi
 
 echo "Installing dotfiles..."
 "$DOTFILES/stow_env" -S $(ls "$DOTFILES/files/")
@@ -17,10 +25,7 @@ source "$DOTFILES/install/git.sh"
 
 zsh_path="$(command -v zsh)"
 
-if ! command_exists zsh; then
-    echo "zsh not found. Please install and then re-run installation script"
-    exit 1
-elif [[ "$SHELL" != "$zsh_path" ]]; then
+if [[ "$SHELL" != "$zsh_path" ]]; then
     echo "Configuring zsh as default shell"
     chsh -s "$zsh_path"
     echo "default shell changed to $zsh_path"
