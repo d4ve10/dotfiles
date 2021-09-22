@@ -23,11 +23,19 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+command_exists() {
+  type "$1" > /dev/null 2>&1
+}
 
-export EDITOR=vim
+if command_exists nvim; then
+  alias vim="nvim"
+  export EDITOR=nvim
+else
+  export EDITOR=vim
+fi
 
-alias zshrc='nvim ~/.zshrc' # Quick access to the ~/.zshrc file
-alias zshalias='nvim ~/.config/zsh/aliasrc' # Quick access to the aliasrc file
+alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
+alias zshalias='vim ~/.config/zsh/aliasrc' # Quick access to the aliasrc file
 
 alias pacman-update='sudo pacman-mirrors --geoip'
 
@@ -74,12 +82,13 @@ alias unexport='unset'
 
 alias emulator_pixel2="/home/dave10/Android/Sdk/emulator/emulator -avd pixel2"
 alias pi="ssh -X pi@192.168.0.51"
-alias update="sudo apt-fast update && sudo apt-fast upgrade"
 alias kali="ssh -X 192.168.122.26"
-alias apt="sudo apt-fast"
-alias vim="nvim"
 alias sudo="sudo "
 
+if command_exists apt-fast; then
+  alias apt="sudo apt-fast"
+fi
+alias update="sudo apt update && sudo apt upgrade"
 
 gitpush() {
     git add .
