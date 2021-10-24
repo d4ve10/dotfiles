@@ -1,0 +1,6 @@
+ #!/bin/bash
+gpg --full-generate-key
+gpg --list-secret-keys --keyid-format LONG
+git config --global commit.gpgsign true
+echo "With the command 'git config --global user.signingkey ID', you can tell git your GPG key ID"
+echo "With the command 'gpg --armor --export ID', you can see your GPG key and add it to GitHub"

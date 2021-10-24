@@ -26,11 +26,5 @@ else
     git config --global credential.helper "cache --timeout 3600"
 fi
 
-ssh-keygen -t ed25519 -C "${email:-$defaultEmail}"
+ssh-keygen -t ed25519 -C "${email:-$defaultEmail}" -f "$HOME/.ssh/id_ed25519_github"
 echo "Added ssh key, now you can add it to your GitHub account"
-
-gpg --full-generate-key
-gpg --list-secret-keys --keyid-format LONG
-git config --global commit.gpgsign true
-echo "With the command 'git config --global user.signingkey ID', you can tell git your GPG key ID"
-echo "With the command 'gpg --armor --export ID', you can see your GPG key and add it to GitHub"
