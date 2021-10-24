@@ -18,7 +18,7 @@ git config --global user.name "${name:-$defaultName}"
 git config --global user.email "${email:-$defaultEmail}"
 git config --global github.user "${github:-$defaultGithub}"
 
-read -rn 1 -p "Save user and password to an unencrypted file to avoid writing? [y/N] " save
+read -rp "Save user and password to an unencrypted file to avoid writing? [y/N] " save
 echo
 if [[ $save =~ ^([Yy])$ ]]; then
     git config --global credential.helper "store"
