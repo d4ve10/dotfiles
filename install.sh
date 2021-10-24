@@ -21,8 +21,6 @@ fi
 echo "Installing dotfiles..."
 "$DOTFILES/stow_env" -S $(ls "$DOTFILES/files/")
 
-source "$DOTFILES/install/git.sh"
-
 zsh_path="$(command -v zsh)"
 
 if [[ "$SHELL" != "$zsh_path" ]]; then
@@ -30,6 +28,8 @@ if [[ "$SHELL" != "$zsh_path" ]]; then
     chsh -s "$zsh_path"
     echo "default shell changed to $zsh_path"
 fi
+
+source "$DOTFILES/install/git.sh"
 
 echo "Installing oh-my-zsh..."
 
