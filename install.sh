@@ -18,20 +18,25 @@ if ! command_exists zsh; then
     exit 1
 fi
 
-echo "Installing dotfiles..."
+echo "--------------------------------------------"
+echo "            Installing dotfiles             "
+echo "--------------------------------------------"
+
 "$DOTFILES/stow_env" -S $(ls "$DOTFILES/files/")
 
 zsh_path="$(command -v zsh)"
 
 if [[ "$SHELL" != "$zsh_path" ]]; then
     echo "Configuring zsh as default shell"
-    chsh -s "$zsh_path"
+    sudo chsh -s "$zsh_path" $(whoami)
     echo "default shell changed to $zsh_path"
 fi
 
 source "$DOTFILES/install/git.sh"
 
-echo "Installing oh-my-zsh..."
+echo "--------------------------------------------"
+echo "            Installing oh-my-zsh            "
+echo "--------------------------------------------"
 
 git clone https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.config/oh-my-zsh"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.config/oh-my-zsh/custom}/plugins/zsh-autosuggestions
