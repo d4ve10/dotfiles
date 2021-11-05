@@ -11,7 +11,6 @@ fi
 echo "--------------------------------------"
 echo "            Setting up Git            "
 echo "--------------------------------------"
-echo -e "\n"
 
 read -rp "Github username [$defaultGithub] " github
 read -rp "Email [$defaultEmail] " email
@@ -23,7 +22,6 @@ git config --global user.email "${email:-$defaultEmail}"
 echo "----------------------------------------"
 echo "            Creating ssh key            "
 echo "----------------------------------------"
-echo -e "\n"
 
 ssh-keygen -t ed25519 -C "${email:-$defaultEmail}" -f "$HOME/.ssh/id_ed25519_github"
 echo "Added ssh key, now you can add it to your GitHub account"
