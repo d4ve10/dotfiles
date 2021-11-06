@@ -37,8 +37,6 @@ fi
 alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
 alias zshalias='vim ~/.config/zsh/aliasrc' # Quick access to the aliasrc file
 
-alias pacman-update='sudo pacman-mirrors --geoip'
-
 alias ls='ls --color=auto'
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='ls -lFh'     #size,show type,human readable
@@ -90,10 +88,18 @@ if command_exists apt-fast; then
 fi
 alias update="sudo apt update && sudo apt upgrade"
 
-gitpush() {
-    git add .
-    git commit -m "$*"
-    git push
-}
-alias gp=gitpush
+alias ga='git add'
+alias gp='git push'
+alias gl='git log'
+alias gs='git status'
+alias gd='git diff'
+alias gcm='git commit -m'
+alias gb='git branch'
+alias gc='git checkout'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gpl='git pull'
+alias gcl='git clone'
+alias gta='git tag -a -m'
+alias gf='git reflog'
 alias gdiscard="git checkout -- ."
