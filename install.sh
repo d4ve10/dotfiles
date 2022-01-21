@@ -32,7 +32,9 @@ if [[ "$SHELL" != "$zsh_path" ]]; then
     echo "default shell changed to $zsh_path"
 fi
 
-source "$DOTFILES/functions/git.sh"
+if [ ! "$1" = "minimal" ]; then
+    source "$DOTFILES/functions/git.sh"
+fi
 
 echo "--------------------------------------------"
 echo "            Installing oh-my-zsh            "
