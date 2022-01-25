@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-DOTFILES=${HOME}/.dotfiles
-STOW_DIR="$DOTFILES/files/"
-
-stow --target="$HOME" --dir="$STOW_DIR" "$@"

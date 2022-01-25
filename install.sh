@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-DOTFILES=${HOME}/.dotfiles
+DOTFILES="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 command_exists() {
     type "$1" > /dev/null 2>&1
@@ -23,18 +23,20 @@ echo -ne "
                          Installing dotfiles
 --------------------------------------------------------------------
 "
-
-"$DOTFILES/stow_env" -S $(ls "$DOTFILES/files/")
+for file in $(ls "$DOTFILES/files/"); do
+    echo "Installing $file"
+    stow --target="$HOME" --dir="$DOTFILES/files/" "$file"
+done
 
 zsh_path="$(command -v zsh)"
 
 if [[ "$SHELL" != "$zsh_path" ]]; then
     echo "Configuring zsh as default shell"
     sudo chsh -s "$zsh_path" $(whoami)
-    echo "default shell changed to $zsh_path"
+    echo "Default shell changed to $zsh_path"
 fi
 
-if [ ! "$1" = "minimal" ]; then
+if [ "$1" = "all" ]; then
     source "$DOTFILES/functions/git.sh"
 fi
 
