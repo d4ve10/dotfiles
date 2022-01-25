@@ -5,22 +5,20 @@ command_exists() {
     type "$1" > /dev/null 2>&1
 }
 
+check_command() {
+    if ! command_exists "$1"; then
+        echo -e "\033[31merror:\033[0m $1 is not installed"
+        exit 1
+    fi
+}
+
 git_clone() {
     git clone --progress ${@:3} "$1" "$2" 2>&1 | grep -v "already exists" || ( cd "$2" && git pull )
 }
 
-if ! command_exists stow; then
-    echo "stow not found. Please install and then re-run installation script"
-    exit 1
-fi
-if ! command_exists git; then
-    echo "git not found. Please install and then re-run installation script"
-    exit 1
-fi
-if ! command_exists zsh; then
-    echo "zsh not found. Please install and then re-run installation script"
-    exit 1
-fi
+check_command stow
+check_command git
+check_command zsh
 
 echo "
 --------------------------------------------------------------------
@@ -35,9 +33,17 @@ done
 zsh_path="$(command -v zsh)"
 
 if [[ "$SHELL" != "$zsh_path" ]]; then
-    echo "Configuring zsh as default shell"
-    sudo chsh -s "$zsh_path" $(whoami)
-    echo "Default shell changed to $zsh_path"
+    echo
+    echo "--------------------------------------------------------------------"
+    echo "                  Configuring zsh as default shell                  "
+    echo "--------------------------------------------------------------------"
+    echo
+    sudo chsh -s "$zsh_path" $(whoami) &>/dev/null
+    if [ $? -eq 0 ]; then
+        echo "Default shell changed to $zsh_path"
+    else
+        echo "Failed to configure zsh as default shell"
+    fi
 fi
 
 if [ "$1" = "all" ]; then
