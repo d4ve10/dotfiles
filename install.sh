@@ -1,8 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/bash
 DOTFILES="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 command_exists() {
     type "$1" > /dev/null 2>&1
+}
+
+git_clone() {
+    git clone --progress ${@:3} "$1" "$2" 2>&1 | grep -v "already exists" || ( cd "$2" && git pull )
 }
 
 if ! command_exists stow; then
@@ -18,7 +22,7 @@ if ! command_exists zsh; then
     exit 1
 fi
 
-echo -ne "
+echo "
 --------------------------------------------------------------------
                          Installing dotfiles
 --------------------------------------------------------------------
@@ -40,18 +44,18 @@ if [ "$1" = "all" ]; then
     source "$DOTFILES/functions/git.sh"
 fi
 
-echo -ne "
+echo "
 --------------------------------------------------------------------
                         Installing oh-my-zsh
 --------------------------------------------------------------------
 "
+ZSH_CUSTOM_DIR="${ZSH_CUSTOM:-$HOME/.config/oh-my-zsh/custom}"
+git_clone https://github.com/ohmyzsh/ohmyzsh.git ~/.config/oh-my-zsh
+git_clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM_DIR/plugins/zsh-autosuggestions
+git_clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM_DIR/plugins/zsh-syntax-highlighting
+git_clone https://github.com/romkatv/powerlevel10k $ZSH_CUSTOM_DIR/themes/powerlevel10k --depth=1
 
-git clone https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.config/oh-my-zsh"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.config/oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.config/oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.config/oh-my-zsh/custom}/themes/powerlevel10k
-
-echo -ne "
+echo -n "
 --------------------------------------------------------------------
                                 Done
                         Reload your terminal
