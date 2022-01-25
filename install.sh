@@ -18,9 +18,11 @@ if ! command_exists zsh; then
     exit 1
 fi
 
-echo "--------------------------------------------"
-echo "            Installing dotfiles             "
-echo "--------------------------------------------"
+echo -ne "
+--------------------------------------------------------------------
+                         Installing dotfiles
+--------------------------------------------------------------------
+"
 
 "$DOTFILES/stow_env" -S $(ls "$DOTFILES/files/")
 
@@ -36,14 +38,20 @@ if [ ! "$1" = "minimal" ]; then
     source "$DOTFILES/functions/git.sh"
 fi
 
-echo "--------------------------------------------"
-echo "            Installing oh-my-zsh            "
-echo "--------------------------------------------"
+echo -ne "
+--------------------------------------------------------------------
+                        Installing oh-my-zsh
+--------------------------------------------------------------------
+"
 
 git clone https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.config/oh-my-zsh"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.config/oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.config/oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.config/oh-my-zsh/custom}/themes/powerlevel10k
-echo "Download the autojump package (Optional)"
 
-echo "Done. Reload your terminal."
+echo -ne "
+--------------------------------------------------------------------
+                                Done
+                        Reload your terminal
+--------------------------------------------------------------------
+"
