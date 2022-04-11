@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Get the IDs from ddccontrol -p
+DISPLAY_ID=4
+LINUX_DISPLAY=17
+WINDOWS_DISPLAY=15
+
+DISPLAY=0
+if [[ "$1" == "windows" ]]; then
+  DISPLAY=$WINDOWS_DISPLAY
+else
+  DISPLAY=$LINUX_DISPLAY
+fi
+
+if ! ddccontrol -r 0x60 dev:/dev/i2c-${DISPLAY_ID} 2>&1 | grep -q "Control 0x60: +/${DISPLAY}"; then
+  ddccontrol -r 0x60 -w ${DISPLAY} dev:/dev/i2c-${DISPLAY_ID}
+fi
