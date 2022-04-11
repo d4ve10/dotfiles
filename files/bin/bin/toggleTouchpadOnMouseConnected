@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 
-## Get the touchpad id. The -P means perl regular expressions (for \K)
-## the -i makes it case insensitive (better portability) and the -o
-## means print only the matched portion. The \K discards anything matched
-## before it so this command will print the numeric id only.
 TID=$(xinput list | grep -iPo 'touchpad.*id=\K\d+')
 
-## Run every second
 while :
 do
-   ## Disable the touchpad if there is a mouse connected
-   ## and enable it if there is none.
-    xinput list | grep -iq mouse &&  xinput disable "$TID" || xinput enable "$TID" 
-    ## wait one second to avoind spamming your CPU
+    if xinput list | grep -iq mouse; then
+      xinput disable "$TID"
+      MOUSE_ID=$(xinput list | grep -vi keyboard | grep -i mouse | grep -oP 'id=\K[^\s]*')
+      xinput set-prop "$MOUSE_ID" "libinput Accel Profile Enabled" 0 1
+    else
+      xinput enable "$TID"
+    fi
     sleep 1
 done
