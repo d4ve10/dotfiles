@@ -18,5 +18,7 @@ then
 elif [ "$1" == "dave-gaming" ]
 then
 	xinput disable "$TOUCHPAD"
-	#xdotool key ctrl+alt+shift+a
+  switch-display windows
+  xrandr_gaming
+	#xdotool key ctrl+alt+shift+f
 fi
