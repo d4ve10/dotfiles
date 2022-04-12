@@ -25,6 +25,9 @@ echo "
                          Installing dotfiles
 --------------------------------------------------------------------
 "
+
+mkdir -p "$HOME/.config/konsave" &>/dev/null
+
 for file in $(ls "$DOTFILES/files/"); do
     echo "Installing $file"
     stow --target="$HOME" --dir="$DOTFILES/files/" "$file"
