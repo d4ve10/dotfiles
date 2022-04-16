@@ -27,6 +27,7 @@ echo "
 "
 
 mkdir -p "$HOME/.config/konsave" &>/dev/null
+mkdir -p "$HOME/.config/MangoHud" &>/dev/null
 
 for file in $(ls "$DOTFILES/files/"); do
     echo "Installing $file"
