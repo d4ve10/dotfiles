@@ -28,6 +28,7 @@ echo "
 "
 
 ssh-keygen -t ed25519 -C "${email:-$defaultEmail}" -f "$HOME/.ssh/id_ed25519_github"
+cat "$HOME/.ssh/id_ed25519_github.pub"
 echo -n "
 --------------------------------------------------------------------
                             Added SSH Key
