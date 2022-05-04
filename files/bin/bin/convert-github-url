@@ -1,0 +1,9 @@
+#!/bin/sh
+
+githubUrl=$(git remote get-url origin)
+if [[ "$1" -ne 0 || -z "$githubUrl" ]]; then
+	exit
+fi
+newUrl=${githubUrl//https:\/\/github.com\//git@github.com:}
+git remote set-url origin "$newUrl"
+echo "Successfully changed the github repo url to ssh"
