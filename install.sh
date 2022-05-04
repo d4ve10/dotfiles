@@ -31,6 +31,7 @@ mkdir -p "$HOME/.config/MangoHud" &>/dev/null
 mkdir -p "$HOME/.config/ckb-next" &>/dev/null
 mkdir -p "$HOME/.config/zsh" &>/dev/null
 mkdir -p "$HOME/.config/barrier" &>/dev/null
+mkdir -p "$HOME/.ssh" &>/dev/null
 mkdir -p "$HOME/.gnupg" &>/dev/null
 
 for file in $(ls "$DOTFILES/files/"); do
