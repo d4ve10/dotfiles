@@ -42,6 +42,7 @@ save:
             - Kvantum
             - latte
             # - dolphinrc
+            - kactivitymanagerdrc
             - konsolerc
             - kcminputrc
             - kdeglobals
@@ -52,9 +53,11 @@ save:
             - ksmserverrc
             - kwinrc
             - kwinrulesrc
+            - kxkbrc
             - plasma-org.kde.plasma.desktop-appletsrc
             - plasmarc
             - plasmashellrc
+            - powermanagementprofilesrc
             - gtkrc
             - gtkrc-2.0
             - lattedockrc
