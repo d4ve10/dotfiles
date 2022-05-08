@@ -1,6 +1,10 @@
- #!/bin/bash
-gpg --full-generate-key
-gpg --list-secret-keys --keyid-format LONG
-git config --global commit.gpgsign true
-echo "With the command 'git config --global user.signingkey ID', you can tell git your GPG key ID"
-echo "With the command 'gpg --armor --export ID', you can see your GPG key and add it to GitHub"
+#!/bin/bash
+if [[ ! -d "$HOME/.gnupg/private-keys-v1.d" || "$1" == "force" ]]; then
+  gpg --full-generate-key
+fi
+signingkey="$(gpg --list-secret-keys --keyid-format=long | grep -m 1 sec | awk -F'/' '{print $2}' | awk -F' ' '{print $1}')"
+if [ -n "$signingkey" ]; then
+  git config --global user.signingkey "$signingkey"
+  git config --global commit.gpgsign true
+  gpg --armor --export "$signingkey"
+fi
