@@ -1,0 +1,33 @@
+swipe:
+  3:
+    left:
+      command: "xdotool key alt+Right" # History forward
+    right:
+      command: "xdotool key alt+Left" # History back
+    up:
+      command: "xdotool key super+Page_Up" # Maximize Window
+    down:
+      command: "xdotool key super+Page_Down" # Minimize Window
+  4:
+    left:
+      command: "xdotool key ctrl+alt+Right" # Switch to next workspace
+    right:
+      command: "xdotool key ctrl+alt+Left" # Switch to previous workspace
+    up:
+      command: "xdotool key ctrl+F9" # Present Windows
+    down:
+      command: "xdotool key super+d" # Show Desktop
+pinch:
+  2:
+    in:
+      command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
+    out:
+      command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
+
+threshold:
+  swipe: 0.5
+  pinch: 0.3
+
+interval:
+  swipe: 0.75
+  pinch: 0.3
