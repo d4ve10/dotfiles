@@ -1,0 +1,19 @@
+#!/bin/sh
+ip_range="192.168.0."
+
+if [[ -z "$1" ]]; then
+	echo "Usage: intern-ssh <last numbers of internal ip range> <username to connect with, will be root if unset>"
+	echo "Example: intern-ssh 100"
+	exit
+fi
+
+if [[ "$2" == "user" || "$2" == "username" ]]; then
+	echo ssh "${ip_range}$1"
+	ssh "${ip_range}$1"
+elif [[ -n "$2" ]]; then
+	echo ssh "$2"@"${ip_range}$1"
+	ssh "$2"@"${ip_range}$1"
+else
+	echo ssh root@"${ip_range}$1"
+	ssh root@"${ip_range}$1"
+fi
