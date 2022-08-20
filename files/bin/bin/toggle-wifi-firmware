@@ -1,0 +1,13 @@
+#!/bin/bash
+[ "$(id -u)" = "0" ] || exec sudo "$0" "$@"
+
+for i in {64..100}
+do
+	if [ -f "/lib/firmware/iwlwifi-ty-a0-gf-a0-$i.ucode.xz" ]; then
+		mv "/lib/firmware/iwlwifi-ty-a0-gf-a0-$i.ucode.xz" "/lib/firmware/iwlwifi-ty-a0-gf-a0-$i.ucode.xz.bak"
+	elif [ -f "/lib/firmware/iwlwifi-ty-a0-gf-a0-$i.ucode.xz.bak" ]; then
+		mv "/lib/firmware/iwlwifi-ty-a0-gf-a0-$i.ucode.xz.bak" "/lib/firmware/iwlwifi-ty-a0-gf-a0-$i.ucode.xz"
+	fi
+done
+
+ls -al /lib/firmware/iwlwifi-ty-a0-gf-a0*
