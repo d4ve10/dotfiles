@@ -26,20 +26,15 @@ echo "
 --------------------------------------------------------------------
 "
 
-mkdir -p "$HOME/.config/konsave" &>/dev/null
-mkdir -p "$HOME/.config/MangoHud" &>/dev/null
-mkdir -p "$HOME/.config/ckb-next" &>/dev/null
-mkdir -p "$HOME/.config/zsh" &>/dev/null
-mkdir -p "$HOME/.config/barrier" &>/dev/null
-mkdir -p "$HOME/.config/fusuma" &>/dev/null
-mkdir -p "$HOME/.ssh" &>/dev/null
-mkdir -p "$HOME/.gnupg" &>/dev/null
-chmod 700 "$HOME/.gnupg"
-
 for file in $(ls "$DOTFILES/files/"); do
     echo "Installing $file"
+    if [ -d "$DOTFILES/files/$file" ]; then
+        (cd "$DOTFILES/files/$file" && find ./ -mindepth 1 -type d -exec mkdir -p "$HOME/{}" \;) &>/dev/null
+    fi
     stow --target="$HOME" --dir="$DOTFILES/files/" "$file"
 done
+
+chmod 700 "$HOME/.gnupg"
 
 zsh_path="$(command -v zsh)"
 
