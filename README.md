@@ -1,6 +1,5 @@
 # Dotfiles
-My dotfiles which include my zsh config and custom bash scripts
-
+My dotfiles from various applications like zsh,nvim,KDE and custom bash scripts
 
 ## Setup
 
