@@ -29,6 +29,9 @@ set title
 " enable persistent undo
 set undofile
 
+" enable clipboard sharing
+set clipboard=unnamedplus
+
 " undo temp file directory
 set undodir=/tmp
 
