@@ -17,6 +17,7 @@ git_clone() {
 }
 
 check_command stow
+check_command jq
 check_command git
 check_command zsh
 
@@ -33,6 +34,10 @@ for file in $(ls "$DOTFILES/files/"); do
     fi
     stow --target="$HOME" --dir="$DOTFILES/files/" "$file"
 done
+
+mkdir -p "$HOME/.config/discord" &>/dev/null
+[ -f "$HOME/.config/discord/settings.json" ] || echo "{}" > "$HOME/.config/discord/settings.json"
+(cd "$HOME/.config/discord" && jq '. + {"SKIP_HOST_UPDATE": true}' settings.json > settings.$$.json && mv settings.$$.json settings.json)
 
 chmod 700 "$HOME/.gnupg"
 
