@@ -34,12 +34,16 @@ for file in $(ls "$DOTFILES/files/"); do
     fi
     stow --target="$HOME" --dir="$DOTFILES/files/" "$file"
 done
+chmod 700 "$HOME/.gnupg"
 
+# Discord settings
 mkdir -p "$HOME/.config/discord" &>/dev/null
 [ -f "$HOME/.config/discord/settings.json" ] || echo "{}" > "$HOME/.config/discord/settings.json"
 (cd "$HOME/.config/discord" && jq '. + {"SKIP_HOST_UPDATE": true}' settings.json > settings.$$.json && mv settings.$$.json settings.json)
 
-chmod 700 "$HOME/.gnupg"
+# Github settings
+git config --global init.defaultBranch main
+git config --global commit.gpgsign true
 
 zsh_path="$(command -v zsh)"
 
