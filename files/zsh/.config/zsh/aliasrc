@@ -79,7 +79,7 @@ alias sortnr='sort -n -r'
 alias unexport='unset'
 
 alias emulator_pixel2="/home/dave10/Android/Sdk/emulator/emulator -avd pixel2"
-alias pi="ssh -X pi@192.168.0.51"
+alias pi="ssh -X 192.168.0.51"
 alias kali="ssh -X 192.168.122.26"
 alias sudo="sudo "
 
