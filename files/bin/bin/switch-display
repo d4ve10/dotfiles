@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Get the IDs from ddccontrol -p
-DISPLAY_ID=4
-LINUX_DISPLAY=17
-WINDOWS_DISPLAY=15
+# Get the IDs from ddcutil detect and ddcutil capabilities
+DISPLAY_ID=6
+LINUX_DISPLAY=0x0f
+WINDOWS_DISPLAY=0x11
 
 DISPLAY=0
 if [[ "$1" == "windows" ]]; then
@@ -12,6 +12,12 @@ else
   DISPLAY=$LINUX_DISPLAY
 fi
 
-if ! ddccontrol -r 0x60 dev:/dev/i2c-${DISPLAY_ID} 2>&1 | grep -q "Control 0x60: +/${DISPLAY}"; then
-  ddccontrol -r 0x60 -w ${DISPLAY} dev:/dev/i2c-${DISPLAY_ID}
+if ! ddcutil -b $DISPLAY_ID getvcp 0x60 | grep -q "sl=$DISPLAY"; then
+  # [ $DISPLAY == $LINUX_DISPLAY ] && sudo /bin/stop-udev
+  ddcutil -b $DISPLAY_ID --verify setvcp 0x60 "$DISPLAY"
+  #if [ $DISPLAY == $LINUX_DISPLAY ]; then
+  #  sleep 5s
+  #  sudo /bin/start-udev
+  #fi
 fi
+
