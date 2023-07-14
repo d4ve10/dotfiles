@@ -96,4 +96,5 @@ Description=Green on Black
 FillStyle=Tile
 Opacity=0.78
 Wallpaper=
+WallpaperFlipType=NoFlip
 WallpaperOpacity=1
