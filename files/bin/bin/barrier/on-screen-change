@@ -1,24 +1,9 @@
 #!/bin/bash
 
-TOUCHPAD="ETPS/2 Elantech Touchpad"
-
-if [[ $(lsusb) == *"Mouse"* ]]; then
-	MOUSE_PLUGGED="true"
-else
-	MOUSE_PLUGGED="false"
+if [ "$1" == "dave-gaming" ]
+then
+  ~/bin/switch-display windows
+  ~/bin/xrandr-gaming
+  #xdotool key ctrl+alt+shift+d
 fi
 
-if [ "$1" == "dave-main" ]
-then
-	if [[ $MOUSE_PLUGGED == "true" ]]; then
-		xinput disable "$TOUCHPAD"
-	else
-		xinput enable "$TOUCHPAD"
-	fi
-elif [ "$1" == "dave-gaming" ]
-then
-	xinput disable "$TOUCHPAD"
-  switch-display windows
-  xrandr-gaming
-	#xdotool key ctrl+alt+shift+f
-fi
