@@ -1,2 +1,2 @@
 #!/bin/bash
-barrierc --disable-crypto -n dave-gaming -d INFO -l /tmp/barrier_client.log -f 192.168.0.53
+barrierc --disable-crypto -n dave-gaming -d INFO -l /tmp/barrier_client.log -f 192.168.0.58
