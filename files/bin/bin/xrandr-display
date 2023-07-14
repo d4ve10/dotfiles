@@ -1,17 +1,12 @@
 #!/bin/sh
 XRANDR_OUTPUT=$(xrandr --current)
-if echo $XRANDR_OUTPUT | grep -q "HDMI-1-1 connected"; then
-  if echo $XRANDR_OUTPUT | grep -q "eDP-1-1 connected"; then
-    xrandr --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rate 60.10 --left-of HDMI-1-1
+if echo $XRANDR_OUTPUT | grep -q "VGA-1 connected"; then
+  if ! echo $XRANDR_OUTPUT | grep -q "1680x1050_60.00_VGA"; then
+    xrandr --newmode "1680x1050_60.00_VGA"  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync
+    xrandr --addmode VGA-1 1680x1050_60.00_VGA
   fi
-  xrandr --output HDMI-1-1 --mode 1920x1080 --pos 1920x0 --rate 144 --primary
-  if echo $XRANDR_OUTPUT | grep -q "VGA-1-1 connected"; then
-    if ! echo $XRANDR_OUTPUT | grep -q "1680x1050_60.00_VGA"; then
-      xrandr --newmode "1680x1050_60.00_VGA"  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync
-      xrandr --addmode VGA-1-1 1680x1050_60.00_VGA
-    fi
-    xrandr --output VGA-1-1 --mode 1680x1050_60.00_VGA --pos 3840x15 --rate 59.95 --right-of HDMI-1-1
-  fi
-elif echo $XRANDR_OUTPUT | grep -q "eDP-1-1 connected"; then
-  xrandr --output eDP-1-1 --mode 1920x1080 --rate 60.10 --primary
+  xrandr --output VGA-1 --mode 1680x1050_60.00_VGA
 fi
+xrandr --output eDP-1 --primary --mode 1920x1080 --pos 1680x0 --rate 144.00 --rotate normal \
+       --output VGA-1 --mode 1680x1050_60.00_VGA --pos 0x15 --rotate normal \
+       --output HDMI-1 --mode 1680x1050 --pos 3600x15 --rotate normal
