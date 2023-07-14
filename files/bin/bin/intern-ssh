@@ -9,11 +9,11 @@ fi
 
 if [[ "$2" == "user" || "$2" == "username" ]]; then
 	echo ssh "${ip_range}$1"
-	ssh "${ip_range}$1"
+	ssh -X "${ip_range}$1"
 elif [[ -n "$2" ]]; then
 	echo ssh "$2"@"${ip_range}$1"
-	ssh "$2"@"${ip_range}$1"
+	ssh -X "$2"@"${ip_range}$1"
 else
 	echo ssh root@"${ip_range}$1"
-	ssh root@"${ip_range}$1"
+	ssh -X root@"${ip_range}$1"
 fi
