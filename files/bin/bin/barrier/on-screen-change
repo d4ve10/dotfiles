@@ -2,7 +2,7 @@
 
 if [ "$1" == "dave-gaming" ]
 then
-  ~/bin/switch-display windows
+  #~/bin/switch-display windows
   ~/bin/xrandr-gaming
   #xdotool key ctrl+alt+shift+d
 fi

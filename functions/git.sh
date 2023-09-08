@@ -5,7 +5,7 @@ defaultEmail=$( git config --global user.email )
 defaultGithub=$( git config --global github.user )
 
 if [[ "$defaultGithub" != "" ]]; then
-	return
+  return
 fi
 
 echo "

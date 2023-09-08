@@ -4,12 +4,12 @@ TID=$(xinput list | grep -iPo 'touchpad.*id=\K\d+')
 
 while :
 do
-    if xinput list | grep -iq mouse; then
-      xinput disable "$TID" &> /dev/null
-      MOUSE_ID=$(xinput list | grep -vi keyboard | grep -i mouse | grep -oP 'id=\K[^\s]*')
-      xinput set-prop "$MOUSE_ID" "libinput Accel Profile Enabled" 0 1 &> /dev/null
-    else
-      xinput enable "$TID" &> /dev/null
-    fi
-    sleep 1
+  if xinput list | grep -iq mouse; then
+    xinput disable "$TID" &> /dev/null
+    MOUSE_ID=$(xinput list | grep -vi keyboard | grep -i mouse | grep -oP 'id=\K[^\s]*')
+    xinput set-prop "$MOUSE_ID" "libinput Accel Profile Enabled" 0 1 &> /dev/null
+  else
+    xinput enable "$TID" &> /dev/null
+  fi
+  sleep 1
 done
