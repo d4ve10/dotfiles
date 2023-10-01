@@ -1,9 +1,9 @@
 swipe:
   3:
     left:
-      command: "xdotool key alt+Right" # History forward
+      command: "xdotool click 9" # History forward
     right:
-      command: "xdotool key alt+Left" # History back
+      command: "xdotool click 8" # History back
     up:
       command: "xdotool key super+Page_Up" # Maximize Window
     down:
