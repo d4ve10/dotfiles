@@ -67,6 +67,21 @@ fi
 
 echo "
 --------------------------------------------------------------------
+                      Downloading extra scripts
+--------------------------------------------------------------------
+"
+case "$(uname --machine)" in
+  x86_64|amd64) architecture="amd64" ;;
+  arm64|aarch64) architecture="arm64";;
+esac
+if [ -n "$architecture" ]; then
+  wget -q --show-progress -O "$HOME/bin/regctl" "https://github.com/regclient/regclient/releases/latest/download/regctl-linux-$architecture" && chmod +x "$HOME/bin/regctl"
+  wget -q --show-progress -O "$HOME/bin/dockcheck" https://raw.githubusercontent.com/mag37/dockcheck/main/dockcheck.sh && chmod +x "$HOME/bin/dockcheck"
+  wget -q --show-progress -O "$HOME/bin/dockerrorcheck" https://raw.githubusercontent.com/mag37/dockcheck/main/errorCheck.sh && chmod +x "$HOME/bin/dockerrorcheck"
+fi
+
+echo "
+--------------------------------------------------------------------
                         Installing oh-my-zsh
 --------------------------------------------------------------------
 "
