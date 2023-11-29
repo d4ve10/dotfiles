@@ -20,6 +20,7 @@ check_command stow
 check_command jq
 check_command git
 check_command zsh
+check_command wget
 
 echo "
 --------------------------------------------------------------------
