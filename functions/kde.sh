@@ -18,6 +18,10 @@ if ! grep -q gtk-theme-name=\"Breeze\" $HOME/.config/gtkrc &>/dev/null; then
   echo "gtk-theme-name=\"Breeze\"" >> $HOME/.config/gtkrc
 fi
 
+# dolphin
+# Set View Mode to Details
+kwriteconfig5 --file $HOME/.local/share/dolphin/view_properties/global/.directory --group Dolphin --key ViewMode "1"
+
 # discoverrc
 # Enable Flathub
 kwriteconfig5 --file $HOME/.config/discoverrc --group FlatpakSources --key Sources "flathub"
